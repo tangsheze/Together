@@ -1,6 +1,8 @@
 package com.dg.common.dataBase;
 
 import com.alibaba.druid.pool.DruidDataSource;
+import com.baomidou.mybatisplus.autoconfigure.ConfigurationCustomizer;
+import com.baomidou.mybatisplus.core.MybatisConfiguration;
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
 import com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean;
 import lombok.Getter;
@@ -28,59 +30,22 @@ import javax.sql.DataSource;
 @MapperScan(basePackages = {"com.dg.**.dao"})
 public class MybatisPlusConfig {
 
-    @Value("${spring.datasource.url}")
-    String mysqlUrl;
-
-    @Value("${spring.datasource.username}")
-    String mysqlUserName;
-
-    @Value("${spring.datasource.password}")
-    String mysqlPassword;
-
-    @Value("${spring.datasource.driver-class-name}")
-    String mysqlDriverClassName;
-    private static final String MAPPER_LOCATION = "classpath*:mapper/**/*.xml";
-
-    @Autowired
-    private PaginationInterceptor paginationInterceptor;
-
-    @Bean(name = "sqlSessionFactory")
-    public MybatisSqlSessionFactoryBean sqlSessionFactory() throws Exception {
-        MybatisSqlSessionFactoryBean mybatisPlus = new MybatisSqlSessionFactoryBean();
-        mybatisPlus.setDataSource(dataSource());
-        mybatisPlus.setMapperLocations(new PathMatchingResourcePatternResolver().getResources(MAPPER_LOCATION));
-        Interceptor[] plugins = {paginationInterceptor};
-        mybatisPlus.setPlugins(plugins);
-        return mybatisPlus;
+    @Bean
+    public PaginationInterceptor paginationInterceptor(){
+        PaginationInterceptor paginationInterceptor = new PaginationInterceptor();
+        return paginationInterceptor;
     }
 
     @Bean
-    @Primary
-    public DataSource dataSource() {
-        DruidDataSource dataSource = new DruidDataSource();
-        dataSource.setUrl(getMysqlUrl());
-        dataSource.setUsername(getMysqlUserName());
-        dataSource.setPassword(getMysqlPassword());
-        dataSource.setDriverClassName(getMysqlDriverClassName());
-        dataSource.setMaxActive(100);
-        dataSource.setMaxWait(10000);
-        dataSource.setMinIdle(0);
-        dataSource.setTestOnBorrow(true);
-        dataSource.setTestWhileIdle(false);
-        dataSource.setTestOnReturn(false);
-        dataSource.setInitialSize(1);
-        dataSource.setMinEvictableIdleTimeMillis(1000 * 60 * 10);
-        dataSource.setTimeBetweenEvictionRunsMillis(60 * 1000);
-        dataSource.setPoolPreparedStatements(true);
-        dataSource.setMaxPoolPreparedStatementPerConnectionSize(20);
-        dataSource.setValidationQuery("SELECT 1 FROM DUAL");
-        return dataSource;
+    public ConfigurationCustomizer configurationCustomizer() {
+        return configuration -> configuration.setMapUnderscoreToCamelCase(true);
     }
 
     @Bean
-    @Primary
-    public DataSourceTransactionManager transactionManager(DataSource dataSource) {
-        return new DataSourceTransactionManager(dataSource);
+    public MybatisConfiguration mybatisConfiguration() {
+        MybatisConfiguration mybatisConfiguration = new MybatisConfiguration();
+        mybatisConfiguration.setLogImpl(org.apache.ibatis.logging.stdout.StdOutImpl.class);
+        mybatisConfiguration.setMapUnderscoreToCamelCase(true);
+        return mybatisConfiguration;
     }
-
 }

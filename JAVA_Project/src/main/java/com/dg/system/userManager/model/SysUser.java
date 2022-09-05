@@ -3,6 +3,7 @@ package com.dg.system.userManager.model;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.dg.system.roleManager.model.SysRole;
+import com.dg.utils.SnowflakeIdUtil;
 import lombok.Data;
 
 import java.util.List;
@@ -37,4 +38,11 @@ public class SysUser {
 
     @TableField(exist = false)
     private transient List<SysRole> roleList;
+
+    public static SysUser fromSysUser(SysUser sysUser) {
+        SnowflakeIdUtil snowflakeIdUtil = new SnowflakeIdUtil(0, 0);
+        sysUser.setId(snowflakeIdUtil.nextId());
+        sysUser.setStatus("0");
+        return sysUser;
+    }
 }

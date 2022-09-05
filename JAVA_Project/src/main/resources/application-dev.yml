@@ -23,6 +23,6 @@ spring:
 swagger:
   enabled: true
 
-#logging:
-#  level:
-#    com.team.autumn: debug
+logging:
+  level:
+    com.team.autumn: debug
