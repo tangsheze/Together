@@ -1,0 +1,28 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/dg_normal?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: 1234
+  jackson:
+    generator:
+      write_numbers_as_strings: true
+
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password:
+    timeout: 300ms
+    jedis:
+      pool:
+        max-idle: 10
+        min-idle: 2
+        max-wait: -1
+        max-active: 50
+
+swagger:
+  enabled: true
+
+#logging:
+#  level:
+#    com.team.autumn: debug
