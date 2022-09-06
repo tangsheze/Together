@@ -3,13 +3,9 @@ package com.dg.system.userManager.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.dg.common.exception.BusinessException;
 import com.dg.common.exception.ExceptionCode;
-import com.dg.system.permissionManager.dao.PermissionDao;
 import com.dg.system.permissionManager.model.SysPermission;
 import com.dg.system.roleManager.dao.RoleDao;
-import com.dg.system.roleManager.dao.UserRoleDao;
 import com.dg.system.roleManager.model.SysRole;
-import com.dg.system.roleManager.model.SysUserRole;
-import com.dg.system.roleManager.service.SysUserRoleService;
 import com.dg.system.userManager.dao.UserDao;
 import com.dg.system.userManager.model.*;
 import com.dg.system.userManager.service.UserService;
@@ -26,7 +22,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * @Author TheFool
@@ -39,12 +34,6 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     RoleDao roleDao;
-
-    @Autowired
-    UserRoleDao userRoleDao;
-
-    @Autowired
-    SysUserRoleService sysUserRoleService;
 
     @Autowired
     UserDetailsService userDetailsService;
@@ -69,11 +58,11 @@ public class UserServiceImpl implements UserService {
         if (sysUser == null) {
             throw new BusinessException(ExceptionCode.SYS_UNAUTHORIZED, "用户不存在");
         }
-        LambdaQueryWrapper<SysUserRole> userRoleWrapper = new LambdaQueryWrapper<SysUserRole>();
-        userRoleWrapper.eq(SysUserRole::getUserId, sysUser.getId());
-        sysUser.setRoleList(userRoleDao.selectList(userRoleWrapper).stream()
-                .map(userRole -> getRole(userRole.getRoleId()))
-                .collect(Collectors.toList()));
+//        LambdaQueryWrapper<SysUserRole> userRoleWrapper = new LambdaQueryWrapper<SysUserRole>();
+//        userRoleWrapper.eq(SysUserRole::getUserId, sysUser.getId());
+//        sysUser.setRoleList(userRoleDao.selectList(userRoleWrapper).stream()
+//                .map(userRole -> getRole(userRole.getRoleId()))
+//                .collect(Collectors.toList()));
         return sysUser;
     }
 
@@ -113,11 +102,11 @@ public class UserServiceImpl implements UserService {
         if (sysUser == null) {
             throw new BusinessException(ExceptionCode.SYS_UNAUTHORIZED, "用户不存在");
         }
-        LambdaQueryWrapper<SysUserRole> userRoleWrapper = new LambdaQueryWrapper<SysUserRole>();
-        userRoleWrapper.eq(SysUserRole::getUserId, sysUser.getId());
-        sysUser.setRoleList(userRoleDao.selectList(userRoleWrapper).stream()
-                .map(userRole -> getRole(userRole.getRoleId()))
-                .collect(Collectors.toList()));
+//        LambdaQueryWrapper<SysUserRole> userRoleWrapper = new LambdaQueryWrapper<SysUserRole>();
+//        userRoleWrapper.eq(SysUserRole::getUserId, sysUser.getId());
+//        sysUser.setRoleList(userRoleDao.selectList(userRoleWrapper).stream()
+//                .map(userRole -> getRole(userRole.getRoleId()))
+//                .collect(Collectors.toList()));
         return sysUser;
     }
 
@@ -131,10 +120,6 @@ public class UserServiceImpl implements UserService {
 
             if (insert(copy) != 1) {
                 throw new BusinessException(ExceptionCode.SYS_ERROR, "注册失败,用户插入失败");
-            }
-
-            if (sysUserRoleService.insert(new SysUserRole(copy.getId())) != 1) {
-                throw new BusinessException(ExceptionCode.SYS_ERROR, "注册失败，角色插入失败");
             }
         }
     }

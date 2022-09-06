@@ -36,8 +36,9 @@ public class SysUser {
 
     private String remark;
 
-    @TableField(exist = false)
-    private transient List<SysRole> roleList;
+    private Long roleName;
+//    @TableField(exist = false)
+//    private transient List<SysRole> roleList;
 
     public static SysUser fromSysUser(SysUser sysUser) {
         SnowflakeIdUtil snowflakeIdUtil = new SnowflakeIdUtil(0, 0);
