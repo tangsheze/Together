@@ -7,7 +7,7 @@ import java.util.Arrays;
 /**
  * 全局异常枚举
  *
- * @Author TheFool
+ * @author ty
  */
 public enum ExceptionCode implements ErrorCode{
     SUCCESS("000000", "正常"),

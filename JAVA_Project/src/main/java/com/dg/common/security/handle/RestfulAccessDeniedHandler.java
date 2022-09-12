@@ -1,7 +1,7 @@
 package com.dg.common.security.handle;
 
 import cn.hutool.json.JSONUtil;
-import com.dg.common.result.Result;
+import com.dg.common.model.Result;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.stereotype.Component;
@@ -14,7 +14,7 @@ import java.io.IOException;
 /**
  * 当访问接口没有权限时，自定义的返回结果
  *
- * @Author TheFool
+ * @author ty
  */
 @Component
 public class RestfulAccessDeniedHandler implements AccessDeniedHandler {

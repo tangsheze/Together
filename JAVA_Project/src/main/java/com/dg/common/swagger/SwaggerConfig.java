@@ -16,7 +16,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 /**
  * sewagger配置
  *
- * @Author TheFool
+ * @author ty
  */
 @EnableSwagger2
 @Configuration

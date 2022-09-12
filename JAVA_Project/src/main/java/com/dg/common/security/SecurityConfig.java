@@ -1,9 +1,9 @@
 package com.dg.common.security;
 
 import com.dg.common.security.handle.RestfulAccessDeniedHandler;
-import com.dg.system.permissionManager.model.SysPermission;
-import com.dg.system.userManager.model.SysUser;
-import com.dg.system.userManager.service.UserService;
+import com.dg.model.SysPermission;
+import com.dg.model.SysUser;
+import com.dg.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -24,7 +24,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import java.util.List;
 
 /**
- * @Author TheFool
+ * @author ty
  */
 @Configuration
 @EnableWebSecurity
@@ -32,13 +32,13 @@ import java.util.List;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
-    UserService userService;
+    private UserService userService;
 
     @Autowired
-    RestfulAccessDeniedHandler restfulAccessDeniedHandler;
+    private RestfulAccessDeniedHandler restfulAccessDeniedHandler;
 
     @Autowired
-    RestAuthenticationEntryPoint restAuthenticationEntryPoint;
+    private RestAuthenticationEntryPoint restAuthenticationEntryPoint;
 
     /**
      * 用于配置需要拦截的url路径、jwt过滤器及出异常后的处理器；
@@ -107,6 +107,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
      * SpringSecurity定义用于封装用户信息的类（主要是用户信息和权限），需要自行实现；
      * SpringSecurity定义的核心接口，用于根据用户名获取用户信息，需要自行实现；
      */
+    @Override
     @Bean
     public UserDetailsService userDetailsService() {
         //获取登录用户信息
@@ -124,7 +125,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
      * 在用户名和密码校验前添加的过滤器，如果有jwt的token，会自行根据token信息进行登录。
      */
     @Bean
-    public JwtAuthenticationTokenFilter jwtAuthenticationTokenFilter(){
+    public JwtAuthenticationTokenFilter jwtAuthenticationTokenFilter() {
         return new JwtAuthenticationTokenFilter();
     }
 

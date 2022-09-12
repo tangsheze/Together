@@ -3,7 +3,7 @@ package com.dg.common.exception;
 /**
  * 全局异常接口
  *
- * @author The Fool
+ * @author ty
  * */
 public interface ErrorCode {
 

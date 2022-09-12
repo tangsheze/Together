@@ -5,7 +5,7 @@ import lombok.Data;
 /**
  * 自定义业务异常
  *
- * @Author TheFool
+ * @author ty
  */
 @Data
 public class BusinessException extends RuntimeException {

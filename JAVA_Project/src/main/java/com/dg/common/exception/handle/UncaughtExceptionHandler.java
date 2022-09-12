@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 /**
  * 未捕获异常处理
  *
- * @author The Fool
+ * @author ty
  * */
 @Slf4j
 @Component

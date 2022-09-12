@@ -2,7 +2,7 @@ package com.dg.common.exception.handle;
 
 import com.dg.common.exception.BusinessException;
 import com.dg.common.exception.ExceptionCode;
-import com.dg.common.result.Result;
+import com.dg.common.model.Result;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.http.HttpStatus;
@@ -23,7 +23,7 @@ import java.util.Map;
 /**
  * 全局处理异常
  *
- * @author The Fool
+ * @author ty
  * */
 @Slf4j
 @RestControllerAdvice(basePackages = {"com.dg"})

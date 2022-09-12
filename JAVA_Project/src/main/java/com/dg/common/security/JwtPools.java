@@ -1,7 +1,7 @@
 package com.dg.common.security;
 
 /**
- * @author The Fool
+ * @author ty
  */
 public interface JwtPools {
     String TOKEN_HEADER = "Authorization";
@@ -10,6 +10,6 @@ public interface JwtPools {
 
     Long EXPIRATION = 60 * 60 * 24L;
 
-    String TOKEN_HEAD = "Bearer";
+    String TOKEN_HEAD = "Bearer ";
 
 }

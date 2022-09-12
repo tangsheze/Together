@@ -1,7 +1,7 @@
 package com.dg.common.security;
 
 import cn.hutool.json.JSONUtil;
-import com.dg.common.result.Result;
+import com.dg.common.model.Result;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.stereotype.Component;
@@ -14,7 +14,7 @@ import java.io.IOException;
 /**
  * 当未登录或者token失效访问接口时，自定义的返回结果
  *
- * @Author TheFool
+ * @author ty
  */
 @Component
 public class RestAuthenticationEntryPoint implements AuthenticationEntryPoint {

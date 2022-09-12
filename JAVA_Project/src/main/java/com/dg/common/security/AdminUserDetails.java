@@ -1,7 +1,8 @@
 package com.dg.common.security;
 
-import com.dg.system.permissionManager.model.SysPermission;
-import com.dg.system.userManager.model.SysUser;
+import com.dg.model.SysPermission;
+import com.dg.model.SysUser;
+import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -13,8 +14,9 @@ import java.util.stream.Collectors;
 /**
  * 用户详情类
  *
- * @Author TheFool
+ * @author ty
  */
+@Data
 public class AdminUserDetails implements UserDetails {
 
     private SysUser sysUser;
