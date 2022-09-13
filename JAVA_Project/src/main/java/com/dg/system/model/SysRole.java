@@ -1,4 +1,4 @@
-package com.dg.model;
+package com.dg.system.model;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;

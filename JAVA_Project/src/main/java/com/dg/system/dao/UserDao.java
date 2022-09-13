@@ -1,8 +1,8 @@
-package com.dg.dao;
+package com.dg.system.dao;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.dg.model.SysPermission;
-import com.dg.model.SysUser;
+import com.dg.system.model.SysPermission;
+import com.dg.system.model.SysUser;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;

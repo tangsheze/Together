@@ -1,4 +1,4 @@
-package com.dg.model.request;
+package com.dg.system.model.request;
 
 import lombok.Data;
 import lombok.Getter;

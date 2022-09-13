@@ -1,16 +1,14 @@
 package com.dg.common.security;
 
-import cn.hutool.http.useragent.UserAgent;
 import com.dg.common.model.Constants;
 import com.dg.utils.IdTool;
 import com.dg.utils.RedisCache;
-import com.dg.model.vo.LoginVo;
+import com.dg.system.model.vo.LoginVo;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;

@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
  * @author ty
  */
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
-@MapperScan(basePackages = {"com.dg.dao"})
+@MapperScan(basePackages = {"com.dg.system.dao"})
 public class DgApplication {
     public static void main(String[] args) {
         SpringApplication.run(DgApplication.class, args);

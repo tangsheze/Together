@@ -1,4 +1,4 @@
-package com.dg.ctrl.gen;
+package com.dg.system.ctrl.gen;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

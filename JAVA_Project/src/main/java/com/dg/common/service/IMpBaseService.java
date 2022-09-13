@@ -9,7 +9,6 @@ import java.util.List;
 
 /**
  * @author ty
- * @date 2022/9/9
  * @apiNote
  */
 public interface IMpBaseService<ENTITY> extends IService<ENTITY> {

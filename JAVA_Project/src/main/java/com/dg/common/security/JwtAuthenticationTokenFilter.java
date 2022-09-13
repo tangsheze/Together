@@ -1,7 +1,6 @@
 package com.dg.common.security;
 
-import com.dg.model.vo.LoginVo;
-import com.dg.utils.JwtTokenUtil;
+import com.dg.system.model.vo.LoginVo;
 import com.dg.utils.SecurityUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

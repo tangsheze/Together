@@ -1,4 +1,4 @@
-package com.dg.model.dto;
+package com.dg.system.model.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

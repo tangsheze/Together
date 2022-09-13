@@ -1,9 +1,9 @@
 package com.dg.common.security;
 
 import com.dg.common.security.handle.RestfulAccessDeniedHandler;
-import com.dg.model.SysPermission;
-import com.dg.model.SysUser;
-import com.dg.service.UserService;
+import com.dg.system.model.SysPermission;
+import com.dg.system.model.SysUser;
+import com.dg.system.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,7 +1,7 @@
 package com.dg.common.security;
 
-import com.dg.model.SysPermission;
-import com.dg.model.SysUser;
+import com.dg.system.model.SysPermission;
+import com.dg.system.model.SysUser;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

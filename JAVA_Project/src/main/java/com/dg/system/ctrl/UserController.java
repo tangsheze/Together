@@ -1,12 +1,12 @@
-package com.dg.ctrl;
+package com.dg.system.ctrl;
 
 import com.dg.common.model.Result;
-import com.dg.model.SysPermission;
-import com.dg.model.SysUser;
-import com.dg.model.request.LoginReq;
-import com.dg.model.vo.LoginVo;
-import com.dg.model.request.RegisterReq;
-import com.dg.service.UserService;
+import com.dg.system.model.SysPermission;
+import com.dg.system.model.SysUser;
+import com.dg.system.model.request.LoginReq;
+import com.dg.system.model.vo.LoginVo;
+import com.dg.system.model.request.RegisterReq;
+import com.dg.system.service.UserService;
 import com.dg.utils.SecurityUtil;
 import com.google.common.collect.Maps;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 /**
  * @author ty

@@ -21,7 +21,6 @@ import java.util.List;
 
 /**
  * @author ty
- * @date 2022/9/9
  * @apiNote
  */
 public class IMpBaseServiceImpl<MAPPER extends BaseMapper<ENTITY>, ENTITY extends BaseEntity> extends ServiceImpl<MAPPER, ENTITY> implements IMpBaseService<ENTITY> {

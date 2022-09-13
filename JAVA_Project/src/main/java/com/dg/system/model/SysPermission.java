@@ -1,4 +1,4 @@
-package com.dg.model;
+package com.dg.system.model;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;

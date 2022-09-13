@@ -1,7 +1,7 @@
-package com.dg.dao;
+package com.dg.system.dao;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.dg.model.SysRole;
+import com.dg.system.model.SysRole;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 

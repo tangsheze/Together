@@ -11,7 +11,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 /**
  * @author ty
- * @date 2022/9/9
  * @apiNote
  */
 public class SecurityUtil {

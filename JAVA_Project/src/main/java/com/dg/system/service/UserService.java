@@ -1,11 +1,11 @@
-package com.dg.service;
+package com.dg.system.service;
 
 import com.dg.common.service.IMpBaseService;
-import com.dg.model.SysPermission;
-import com.dg.model.request.LoginReq;
-import com.dg.model.vo.LoginVo;
-import com.dg.model.request.RegisterReq;
-import com.dg.model.SysUser;
+import com.dg.system.model.SysPermission;
+import com.dg.system.model.request.LoginReq;
+import com.dg.system.model.vo.LoginVo;
+import com.dg.system.model.request.RegisterReq;
+import com.dg.system.model.SysUser;
 
 import java.util.List;
 
